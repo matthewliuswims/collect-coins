@@ -1,0 +1,25 @@
+{
+  "name": "XR DevTools",
+  "version": "0.1",
+  "description": "",
+  "devtools_page": "devtools.html",
+  "background": {
+    "scripts": [
+      "background.build.js"
+    ]
+  },
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["content.build.js"],
+    "run_at": "document_start"
+  }],
+  "permissions": [
+    "storage",
+    "tabs", 
+    "alarms", 
+    "http://*/*",
+    "https://*/*"
+  ],
+  "web_accessible_resources": ["inject.build.js"],
+  "manifest_version": 2
+}
